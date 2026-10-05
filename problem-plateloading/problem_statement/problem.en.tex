@@ -1,0 +1,55 @@
+% Display the course ID while retaining a valid internal problemtools shortname.
+\ifdefined\problemheader
+  \let\originalproblemheader\problemheader
+  \renewcommand{\problemheader}[2]{\originalproblemheader{#1}{problem-36-24527669}}
+\fi
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\problemname{Plate Loading Challenge}
+
+The University Gym is running a plate-loading challenge. Before each
+attempt, the instructor present announces a target weight. Your goal is to load the heaviest
+barbell that does not exceed the announced target. The equipment officer also wants to
+know how many different selections of plate pairs could produce that desired weight.
+
+The empty bar alone weighs $B$ units. The rack holds $n$ labelled pairs of plates,
+numbered $1$ to $n$. Pair $i$ contains two plates, each weighing $p_i$ units.
+To use a pair, load each end of the bar with the plates, adding $2p_i$
+units in total. Each pair may only be used at most once, and it cannot be split up or combined 
+with another. There is also enough room on the bar for any number of selections.
+
+2 selections are different if they use different sets of pair labels.
+Pairs with equal weights still have different labels. 
+Rearranging the selected plates does not create a different selection. 
+Selecting no pairs is allowed and it also counts as 1 selection.
+
+All weights are expressed in integer units, where one unit is =  $100$ grams.
+The target $T$ includes the weight of the bar. Find the maximum achievable
+total weight at most $T$, and the exact number of selections achieving it.
+
+\section*{Input}
+The first line contains three integers $n$, $B$, and $T$, where
+$1 \leq n \leq 200$, $1 \leq B \leq 1000$, and $B \leq T \leq B+10000$.
+
+The second line contains $n$ integers $p_1,\ldots,p_n$, where
+$1 \leq p_i \leq 1000$. The $i$th integer is the weight of \emph{one plate}
+from pair $i$, in the same units as $B$ and $T$.
+There is one challenge per input file.
+
+\section*{Output}
+Output two integers on one line, separated by a space: the maximum total
+barbell weight in the given units, and the exact number of selections
+achieving that weight.
+The count may exceed the range of a 64-bit integer.
+
+\section*{Sample explanations}
+In Sample 1, the empty bar weighs $200$ units ($20$ kg).
+The selections $\{1,2\}$, $\{1,3\}$, and $\{2,3,4\}$ each add $160$
+units. They are the three selections achieving the target of $360$ units.
+
+In Sample 2, pair 1 alone gives $212$ units and pair 2 alone gives $220$
+units. Both pairs together would exceed the target of $221$ units, so the
+answer is $220$ units with one selection.
+
+In Sample 3, the target equals the empty bar's weight. The only possible
+selection is the empty selection.

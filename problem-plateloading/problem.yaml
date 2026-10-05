@@ -1,0 +1,12 @@
+name: Plate Loading Challenge
+author: Tinashe Nemacha
+source: CITS3001 Advanced Algorithms 2026 Project
+license: educational
+type: pass-fail
+validation: default
+limits:
+  time_multiplier: 5
+  time_safety_margin: 2
+  memory: 256
+  output: 1
+
